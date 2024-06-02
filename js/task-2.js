@@ -1,8 +1,21 @@
-
-
-
-
-
+class Storage {
+  #items;
+  constructor(params) {
+    this.#items = params;
+  }
+  getItems() {
+    return this.#items;
+  }
+  addItem(newItem) {
+    this.#items.push(newItem);
+  }
+  removeItem(itemToRemove) {
+    let index = this.#items.indexOf(itemToRemove);
+    if (index >= 0) {
+      this.#items.splice(index, 1);
+    }
+  }
+}
 
 
 const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
